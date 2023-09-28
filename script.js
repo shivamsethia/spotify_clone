@@ -2,21 +2,26 @@ console.log("Welcome to Spotify");
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
+let audioElement = new Audio("songs/1.mp3");
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
-
+let currentTimestamp = document.getElementById('timestamp');
 let songs = [
-    {songName: "Doraemon", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
-    {songName: "Right now", filePath: "songs/2.mp3", coverPath: "covers/2.jpg"},
-    {songName: "Smack that", filePath: "songs/3.mp3", coverPath: "covers/3.jpg"},
-    {songName: "hattori", filePath: "songs/4.mp3", coverPath: "covers/4.jpg"},
-    {songName: "gali gali sim sim", filePath: "songs/5.mp3", coverPath: "covers/5.jpg"},
-    
-]
+    {songName: "Beethoven Symphony No. 5", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
+    {songName: "In The End - Linkin Park", filePath: "songs/2.mp3", coverPath: "covers/2.jpg"},
+    {songName: "21 Savage - Bank Account", filePath: "songs/3.mp3", coverPath: "covers/3.jpg"},
+    {songName: "ACDC - Thunderstruck", filePath: "songs/4.mp3", coverPath: "covers/4.jpg"},
+    {songName: "Beethoven - Moonlight Sonata", filePath: "songs/5.mp3", coverPath: "covers/5.jpg"},
+    {songName: "Numb - Linkin Park", filePath: "songs/6.mp3", coverPath: "covers/6.jpg"},
+    {songName: "Queen - Bohemian Rhapsody", filePath: "songs/7.mp3", coverPath: "covers/6.jpg"},
+    {songName: "Yiruma - Kiss the Rain", filePath: "songs/8.mp3", coverPath: "covers/8.jpg"},
+    {songName: "Yiruma - River Flows in You", filePath: "songs/9.mp3", coverPath: "covers/9.jpg"}
+];
+
+
 
 songItems.forEach((element, i)=>{ 
     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
@@ -103,3 +108,6 @@ document.getElementById('previous').addEventListener('click', ()=>{
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
 })
+
+
+
